@@ -121,7 +121,7 @@
 
     displayManager.lightdm = {
       enable               = true;
-      background           = /home/jarias/Pictures/ged048.jpg;
+      background           = /home/jarias/Pictures/ponyo002.jpg;
       greeters.enso.enable = true;
     };
 
