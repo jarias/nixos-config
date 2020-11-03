@@ -469,7 +469,7 @@ in
     windowManager.command = "dwm";
     scriptPath = ".hm-xsession";
     initExtra = ''
-      feh --bg-scale ~/Pictures/ged048.jpg
+      feh --bg-scale ~/Pictures/ponyo002.jpg
       autorandr -c
       xsettingsd &
     '';
