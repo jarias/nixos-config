@@ -62,6 +62,7 @@ in
     docker-compose
     # devops tools
     terraform_0_12
+    terraform-ls
     packer
     minikube
     fluxctl
