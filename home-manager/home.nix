@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   nix-processmgmt = import ./nix-processmgmt/tools {};
+  unstable = import <nixos-unstable> {};
 in
 {
   nixpkgs = {
@@ -10,6 +11,9 @@ in
         dwm = super.dwm.override {
           patches = [ ./dwm-config-1.0.10.patch ];
         };
+      })
+      (self: super: {
+        fzf = unstable.fzf;
       })
       (self: super: {
         aws-google-auth = super.aws-google-auth.override {
