@@ -16,7 +16,7 @@ in
         fzf = unstable.fzf;
       })
       (self: super: {
-        aws-google-auth = super.aws-google-auth.override {
+        aws-google-auth = unstable.aws-google-auth.override {
           withU2F = true;
         };
       })
