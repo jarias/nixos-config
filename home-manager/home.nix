@@ -204,7 +204,7 @@ in
     };
     sessionVariables = {
       EDITOR = "vim";
-      PATH   = "$PATH:$HOME/.poetry/bin";
+      PATH   = "$PATH:$HOME/.poetry/bin:$HOME/.local/bin";
     };
     shellAliases = {
       # Docker
@@ -221,9 +221,9 @@ in
       kl        = "kubectl logs";
       kctx      = "kubectx";
       kns       = "kubens";
-      tf        = "~/.local/bin/terraform";
-      tfp       = "~/.local/bin/terraform plan -out plan.out";
-      tfa       = "~/.local/bin/terraform apply plan.out";
+      tf        = "terraform";
+      tfp       = "terraform plan -out plan.out";
+      tfa       = "terraform apply plan.out";
       # Network
       ipe       = "curl ipinfo.io/ip";
       # Date/Time
