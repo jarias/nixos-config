@@ -65,6 +65,7 @@ in
     gcc
     docker-compose
     # devops tools
+    dive
     terraform_0_12
     terraform-ls
     packer
@@ -446,7 +447,7 @@ in
         discharging = "";
       };
       time = {
-        format = "%A %e %b %Y %r";
+        format = "%A%e %b %Y %r";
       };
     };
   };
