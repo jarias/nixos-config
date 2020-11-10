@@ -447,7 +447,7 @@ in
         discharging = "";
       };
       time = {
-        format = "%A%e %b %Y %r";
+        format = "%A %e %b %Y %r";
       };
     };
   };
