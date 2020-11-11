@@ -36,7 +36,9 @@ in
     openvpn
     update-systemd-resolved
     # misc tools
+    file
     xdg_utils
+    xdg-user-dirs
     xsettingsd
     sshpass
     dos2unix
