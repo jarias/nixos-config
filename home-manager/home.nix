@@ -67,6 +67,7 @@ in
     gcc
     docker-compose
     # devops tools
+    eksctl
     dive
     terraform_0_12
     terraform-ls
