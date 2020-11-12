@@ -67,7 +67,7 @@ in
     gcc
     docker-compose
     # devops tools
-    eksctl
+    unstable.eksctl
     dive
     terraform_0_12
     terraform-ls
@@ -469,8 +469,7 @@ in
       Xft.hintstyle: hintslight
       Xft.hinting: 1
       Xft.antialias: 1
-      Xft.rgba: rgb
-    '';
+      Xft.rgba: rgb'';
   };
 
   xsession = {
@@ -487,10 +486,10 @@ in
       "XDG_DESKTOP_PORTAL_DIR"
       "PATH"
     ];
-    pointerCursor = {
-      package = pkgs.vanilla-dmz;
-      name    = "Vanilla-DMZ";
-    };
+    #pointerCursor = {
+    #  package = pkgs.vanilla-dmz;
+    #  name    = "Vanilla-DMZ";
+    #};
   };
 
   gtk = {
