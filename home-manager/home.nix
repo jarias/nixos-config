@@ -54,6 +54,7 @@ in
     pavucontrol
     dmidecode
     restic
+    texlive.combined.scheme-basic
     # programming tools
     gitAndTools.git-trim
     go
@@ -514,7 +515,8 @@ in
     export _JAVA_AWT_WM_NONREPARENTING=1
   '';
 
-  home.file.".xsettingsd".text = "";
+  home.file.".xsettingsd".text = ''
+  '';
 
   xdg.configFile."nvim/coc-settings.json".text = ''
     {
