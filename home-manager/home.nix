@@ -93,6 +93,8 @@ in
     # web browsers
     #google-chrome
     chromium
+    # Audio/Video
+    vlc
   ];
 
   # Let Home Manager install and manage itself.
