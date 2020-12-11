@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   nix-processmgmt = import ./nix-processmgmt/tools {};
-  unstable = import <nixos-unstable> {};
+  unstable = import <nixos-unstable> { config.allowUnfree = true; };
 in
 {
   nixpkgs = {
@@ -68,6 +68,8 @@ in
     gcc
     docker-compose
     # devops tools
+    unstable.vscode
+    unstable.terragrunt
     unstable.eksctl
     dive
     terraform_0_12
@@ -488,6 +490,7 @@ in
       "_JAVA_AWT_WM_NONREPARENTING"
       "XDG_DESKTOP_PORTAL_DIR"
       "PATH"
+      "DOCKER_HOST"
     ];
     #pointerCursor = {
     #  package = pkgs.vanilla-dmz;
@@ -515,6 +518,7 @@ in
 
   home.file.".profile".text = ''
     export _JAVA_AWT_WM_NONREPARENTING=1
+    export DOCKER_HOST=tcp://localhost:2375
   '';
 
   home.file.".xsettingsd".text = ''

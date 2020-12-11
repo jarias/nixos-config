@@ -21,6 +21,7 @@
     kernelParams             = [ "pci=nommconf" ];
     supportedFilesystems     = [ "zfs" ];
     blacklistedKernelModules = [ "nouveau" ];
+    kernelPackages           = pkgs.linuxPackages_latest;
   };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -156,10 +157,10 @@
       storageDriver = "zfs";
       listenOptions = ["0.0.0.0:2375" "/run/docker.sock"];
     };
-    virtualbox.host = {
-      enable              = true;
-      enableExtensionPack = true;
-    };
+    #virtualbox.host = {
+    #  enable              = true;
+    #  enableExtensionPack = true;
+    #};
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
