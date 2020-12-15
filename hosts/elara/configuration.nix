@@ -146,7 +146,6 @@
   hardware = {
     pulseaudio.enable             = true;
     cpu.intel.updateMicrocode     = true;
-    enableAllFirmware             = true;
     enableRedistributableFirmware = true;
     opengl.extraPackages          = with pkgs; [ vaapiIntel vaapiVdpau libvdpau-va-gl intel-media-driver ];
   };
