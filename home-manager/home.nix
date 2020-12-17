@@ -20,6 +20,18 @@ in
           withU2F = true;
         };
       })
+      (self: super: {
+        obs-studio = super.obs-studio.overrideAttrs (old: {
+          version = "26.1.0";
+          src = super.fetchFromGitHub {
+            owner = "obsproject";
+            repo = "obs-studio";
+            rev = "refs/tags/26.1.0";
+            sha256 = "0021pvmnvk5gglh7ag6vmjrd9yhhg7vxca1insby1k0j1c2bxv8n";
+            fetchSubmodules = true;
+          };
+        });
+      })
     ];
   };
 
@@ -557,6 +569,7 @@ in
   xdg.configFile."nvim/init.vim".text = ''
     call plug#begin('~/.local/share/nvim/plugged')
 
+    Plug 'mzlogin/vim-markdown-toc'
     Plug 'evanleck/vim-svelte', {'branch': 'main'}
     Plug 'editorconfig/editorconfig-vim'
     Plug 'leafgarland/typescript-vim'
