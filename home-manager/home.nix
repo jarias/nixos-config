@@ -147,9 +147,9 @@ in
 
   programs.gpg.enable = true;
 
-  #programs.firefox = {
-  #  enable = true;
-  #};
+  programs.firefox = {
+    enable = true;
+  };
 
   programs.git = {
     enable = true;
@@ -393,6 +393,9 @@ in
 
   services.picom = {
     enable = true;
+    shadowExclude = [
+      "class_g = 'firefox'"
+    ];
   };
 
   services.dunst = {

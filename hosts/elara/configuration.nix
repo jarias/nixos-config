@@ -5,12 +5,17 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+      };
+    };
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
@@ -119,6 +124,9 @@
     xkbVariant                  = "altgr-intl";
     autorun                     = true;
     videoDrivers                = [ "intel" ];
+    deviceSection               = ''
+      Option "TearFree" "true"
+    '';
     # Enable touchpad support.
     libinput = {
       enable  = true;
