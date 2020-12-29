@@ -67,6 +67,7 @@ in
     dmidecode
     restic
     texlive.combined.scheme-basic
+    pandoc
     # programming tools
     gitAndTools.git-trim
     go
