@@ -31,6 +31,7 @@
     kernelModules            = [ "v4l2loopback" ];
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=10 card_label="OBS Cam" exclusive_caps=1
+      options iwlmvm power_scheme=1
     '';
   };
 
@@ -41,7 +42,9 @@
     useDHCP                   = false;
     interfaces.wlp2s0.useDHCP = true;
     hostId                    = "dcb6ee42";
-    networkmanager.enable     = true;
+    networkmanager = {
+      enable     = true;
+    };
     hostName                  = "elara";
   };
 
@@ -71,7 +74,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [ wireless-regdb ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -90,12 +93,16 @@
   # List services that you want to enable:
   services = {
     flatpak.enable  = true;
-    resolved.enable = true;
+    resolved = {
+      enable = true;
+      dnssec = "false";
+      fallbackDns = ["1.1.1.1" "8.8.8.8"];
+    };
     tlp.enable      = true;
     thermald.enable = true;
     upower.enable   = true;
     pcscd.enable    = true;
-    udev.packages   = with pkgs; [ yubikey-personalization ];
+    udev.packages   = with pkgs; [ yubikey-personalization crda ];
     dbus.packages   = with pkgs; [ gnome3.dconf ];
     printing.enable = true;
     fwupd.enable    = true;

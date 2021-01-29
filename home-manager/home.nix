@@ -66,8 +66,9 @@ in
     pavucontrol
     dmidecode
     restic
-    texlive.combined.scheme-basic
+    texlive.combined.scheme-full
     pandoc
+    graphviz
     # programming tools
     gitAndTools.git-trim
     go
@@ -80,7 +81,10 @@ in
     gnumake
     gcc
     docker-compose
+    unstable.jetbrains.webstorm
+    unstable.jetbrains.idea-ultimate
     # devops tools
+    gitAndTools.gh
     unstable.vscode
     unstable.terragrunt
     unstable.eksctl
