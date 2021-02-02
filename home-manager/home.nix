@@ -98,7 +98,7 @@ in
     kubernetes-helm
     kubectl
     kubectx
-    awscli
+    unstable.awscli2
     doctl
     aws-google-auth
     awslogs
